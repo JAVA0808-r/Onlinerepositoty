@@ -1,0 +1,170 @@
+// Car klassi
+public class Car {
+    private String color;       // Avtomobil rangi
+    private String model;       // Avtomobil modeli
+    private double price;       // Avtomobil narxi
+    private String transmission; // Uzatmalar qutisi turi
+
+    // Konstruktor
+    public Car(String color, String model, double price, String transmission) {
+        this.color = color;
+        this.model = model;
+        this.price = price;
+        this.transmission = transmission;
+    }
+
+    // Getter va Setter metodlari
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    // Ma'lumotlarni chiqarish metodi
+    public void displayInfo() {
+        System.out.println("Car Info:");
+        System.out.println("Model: " + model);
+        System.out.println("Color: " + color);
+        System.out.println("Price: $" + price);
+        System.out.println("Transmission: " + transmission);
+    }
+}
+
+// RightTriangle klassi
+public class RightTriangle {
+    private double side1;      // Birinchi katet
+    private double side2;      // Ikkinchi katet
+    private double hypotenuse; // Gipotenuz
+
+    // Konstruktor
+    public RightTriangle(double side1, double side2, double hypotenuse) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.hypotenuse = hypotenuse;
+    }
+
+    // Yuzani hisoblash metodi
+    public double calculateArea() {
+        return 0.5 * side1 * side2;
+    }
+
+    // Perimetrni hisoblash metodi
+    public double calculatePerimeter() {
+        return side1 + side2 + hypotenuse;
+    }
+
+    // Ma'lumotlarni chiqarish metodi
+    public void displayInfo() {
+        System.out.println("Right Triangle Info:");
+        System.out.println("Side 1: " + side1);
+        System.out.println("Side 2: " + side2);
+        System.out.println("Hypotenuse: " + hypotenuse);
+        System.out.println("Area: " + calculateArea());
+        System.out.println("Perimeter: " + calculatePerimeter());
+    }
+}
+
+// Person klassi
+public class Person {
+    private String name;        // Ism
+    private int age;            // Yosh
+    private String gender;      // Jins
+    private String occupation;  // Kasb
+
+    // Konstruktor
+    public Person(String name, int age, String gender, String occupation) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.occupation = occupation;
+    }
+
+    // Getter va Setter metodlari
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    // Ma'lumotlarni chiqarish metodi
+    public void introduce() {
+        System.out.println("Person Info:");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Gender: " + gender);
+        System.out.println("Occupation: " + occupation);
+    }
+}
+
+// Asosiy klass (Main)
+public class Main {
+    public static void main(String[] args) {
+        // Car obyekti yaratish va test qilish
+        Car myCar = new Car("Black", "Tesla Model S", 80000.0, "Automatic");
+        myCar.displayInfo();
+        
+        System.out.println(); // Bo'sh qator
+        
+        // RightTriangle obyekti yaratish va test qilish
+        RightTriangle triangle = new RightTriangle(3.0, 4.0, 5.0);
+        triangle.displayInfo();
+        
+        System.out.println(); // Bo'sh qator
+        
+        // Person obyekti yaratish va test qilish
+        Person person = new Person("Ali", 30, "Male", "Software Engineer");
+        person.introduce();
+    }
+}
