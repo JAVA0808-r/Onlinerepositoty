@@ -1,0 +1,55 @@
+public class Car {
+    private String color;
+    private String model;
+    private double price;
+    private boolean isAutomatic;
+
+    // Constructor
+    public Car(String color, String model, double price, boolean isAutomatic) {
+        this.color = color;
+        this.model = model;
+        this.price = price;
+        this.isAutomatic = isAutomatic;
+    }
+
+    // Getter va Setter metodlari (Encapsulation)
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean isAutomatic() {
+        return isAutomatic;
+    }
+
+    public void setAutomatic(boolean isAutomatic) {
+        this.isAutomatic = isAutomatic;
+    }
+
+    // Avto haqida ma'lumot beruvchi metod
+    public void displayCarInfo() {
+        System.out.println("Car Model: " + model);
+        System.out.println("Color: " + color);
+        System.out.println("Price: $" + price);
+        System.out.println("Transmission: " + (isAutomatic ? "Automatic" : "Manual"));
+    }
+}
