@@ -1,0 +1,36 @@
+public class Main {
+    public static void main(String[] args) {
+        // Car klassini test qilish
+        Car myCar = new Car("Qora", "Tesla Model S", 79999.99, true);
+        myCar.displayCarInfo();
+
+        System.out.println("\n--------------------------------\n");
+
+        // RightTriangle klassini test qilish
+        RightTriangle triangle = new RightTriangle(3, 4);
+        
+        // Turli metodlarni chaqirish (method overloading)
+        System.out.println("Int area: " + triangle.calculateArea(3, 4));
+        System.out.println("Double area: " + triangle.calculateArea(3.0, 4.0));
+        System.out.println("Float area: " + triangle.calculateArea(3.0f, 4.0f));
+        System.out.println("Long area: " + triangle.calculateArea(3L, 4L));
+        
+        System.out.println("\nInt perimeter: " + triangle.calculatePerimeter(3, 4));
+        System.out.println("Double perimeter: " + triangle.calculatePerimeter(3.0, 4.0));
+        System.out.println("Float perimeter: " + triangle.calculatePerimeter(3.0f, 4.0f));
+        System.out.println("Long perimeter: " + triangle.calculatePerimeter(3L, 4L));
+
+        System.out.println("\n--------------------------------\n");
+
+        // Point klassini test qilish
+        Point point = new Point(1.5, 2.5, 3.5);
+        point.displayCoordinates();
+        
+        // Koordinatalarni o'zgartirish
+        point.setX(10.0);
+        point.setY(20.0);
+        point.setZ(30.0);
+        System.out.println("\nAfter modification:");
+        point.displayCoordinates();
+    }
+}
