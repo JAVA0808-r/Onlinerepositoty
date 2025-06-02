@@ -1,0 +1,72 @@
+public class MathFunctions {
+    // 1. Static o'zgaruvchilar e'lon qilamiz
+    private static double PI;
+    private static double E;
+    
+    // 2. Static initialization block - klass yuklanganda bir marta ishlaydi
+    static {
+        PI = 3.14159265359;  // π qiymati
+        E = 2.71828182846;    // e qiymati
+        System.out.println("MathFunctions klassi ishga tushdi:");
+        System.out.println("PI = " + PI);
+        System.out.println("E = " + E);
+    }
+    
+    // 3.1 Doira yuzini hisoblash metodi (πr²)
+    public static double calculateCircleArea(double radius) {
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius musbat son bo'lishi kerak");
+        }
+        return PI * radius * radius;
+    }
+    
+    // 3.2 e^a ni hisoblash metodi
+    public static double calculateEPower(double exponent) {
+        // O'zimiz hisoblaymiz (Math.pow o'rniga)
+        double result = 1;
+        for (int i = 0; i < exponent; i++) {
+            result *= E;
+        }
+        return result;
+    }
+    
+    // 3.3 Uchburchak yuzi (Geron formulasi)
+    public static double calculateTriangleArea(double a, double b, double c) {
+        // Tomonlar musbat va uchburchak qonuniyatiga mosligini tekshiramiz
+        if (a <= 0 || b <= 0 || c <= 0) {
+            throw new IllegalArgumentException("Tomonlar musbat son bo'lishi kerak");
+        }
+        if (a + b <= c || a + c <= b || b + c <= a) {
+            throw new IllegalArgumentException("Berilgan tomonlar uchburchak hosil qila olmaydi");
+        }
+        
+        double s = (a + b + c) / 2;  // Yarim perimetr
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+    
+    // Test qilish uchun main metodi
+    public static void main(String[] args) {
+        System.out.println("\nTest natijalari:");
+        
+        // Doira yuzi test
+        double radius = 5.0;
+        System.out.printf("Radiusi %.1f bo'lgan doira yuzi: %.2f\n", 
+                         radius, calculateCircleArea(radius));
+        
+        // e darajasi test
+        double exponent = 3.0;
+        System.out.printf("e^%.1f = %.4f\n", exponent, calculateEPower(exponent));
+        
+        // Uchburchak yuzi test
+        double a = 3.0, b = 4.0, c = 5.0;
+        System.out.printf("Tomonlari %.1f, %.1f, %.1f bo'lgan uchburchak yuzi: %.2f\n",
+                         a, b, c, calculateTriangleArea(a, b, c));
+        
+        // Noto'g'ri qiymatlar bilan test
+        try {
+            calculateTriangleArea(1, 2, 5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Xato: " + e.getMessage());
+        }
+    }
+}
