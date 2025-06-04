@@ -1,0 +1,299 @@
+// A sxemasi: Doctor ierarxiyasi
+class Doctor {
+    private String name;
+    private int experienceYears;
+    
+    public Doctor(String name, int experienceYears) {
+        this.name = name;
+        this.experienceYears = experienceYears;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getExperienceYears() {
+        return experienceYears;
+    }
+    
+    public void displayInfo() {
+        System.out.println("Doctor: " + name + ", Experience: " + experienceYears + " years");
+    }
+}
+
+class Xirurg extends Doctor {
+    private String specialization;
+    private int operationsCount;
+    
+    public Xirurg(String name, int experienceYears, String specialization, int operationsCount) {
+        super(name, experienceYears);
+        this.specialization = specialization;
+        this.operationsCount = operationsCount;
+    }
+    
+    public String getSpecialization() {
+        return specialization;
+    }
+    
+    public int getOperationsCount() {
+        return operationsCount;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Specialization: " + specialization + ", Operations performed: " + operationsCount);
+    }
+}
+
+class Lor extends Doctor {
+    private boolean pediatricSpecialist;
+    private String clinicName;
+    
+    public Lor(String name, int experienceYears, boolean pediatricSpecialist, String clinicName) {
+        super(name, experienceYears);
+        this.pediatricSpecialist = pediatricSpecialist;
+        this.clinicName = clinicName;
+    }
+    
+    public boolean isPediatricSpecialist() {
+        return pediatricSpecialist;
+    }
+    
+    public String getClinicName() {
+        return clinicName;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Pediatric specialist: " + pediatricSpecialist + ", Clinic: " + clinicName);
+    }
+}
+
+// B sxemasi: Electronics ierarxiyasi
+class Electronics {
+    private String brand;
+    private double price;
+    private int warrantyYears;
+    
+    public Electronics(String brand, double price, int warrantyYears) {
+        this.brand = brand;
+        this.price = price;
+        this.warrantyYears = warrantyYears;
+    }
+    
+    public String getBrand() {
+        return brand;
+    }
+    
+    public double getPrice() {
+        return price;
+    }
+    
+    public int getWarrantyYears() {
+        return warrantyYears;
+    }
+    
+    public void displayInfo() {
+        System.out.println("Brand: " + brand + ", Price: $" + price + ", Warranty: " + warrantyYears + " years");
+    }
+}
+
+class Computers extends Electronics {
+    private String processor;
+    private int ramGB;
+    
+    public Computers(String brand, double price, int warrantyYears, String processor, int ramGB) {
+        super(brand, price, warrantyYears);
+        this.processor = processor;
+        this.ramGB = ramGB;
+    }
+    
+    public String getProcessor() {
+        return processor;
+    }
+    
+    public int getRamGB() {
+        return ramGB;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Processor: " + processor + ", RAM: " + ramGB + "GB");
+    }
+}
+
+class PC extends Computers {
+    private boolean hasGraphicsCard;
+    private String caseType;
+    
+    public PC(String brand, double price, int warrantyYears, String processor, int ramGB, 
+              boolean hasGraphicsCard, String caseType) {
+        super(brand, price, warrantyYears, processor, ramGB);
+        this.hasGraphicsCard = hasGraphicsCard;
+        this.caseType = caseType;
+    }
+    
+    public boolean hasGraphicsCard() {
+        return hasGraphicsCard;
+    }
+    
+    public String getCaseType() {
+        return caseType;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Has graphics card: " + hasGraphicsCard + ", Case type: " + caseType);
+    }
+}
+
+class Laptop extends Computers {
+    private double screenSize;
+    private double weight;
+    
+    public Laptop(String brand, double price, int warrantyYears, String processor, int ramGB, 
+                 double screenSize, double weight) {
+        super(brand, price, warrantyYears, processor, ramGB);
+        this.screenSize = screenSize;
+        this.weight = weight;
+    }
+    
+    public double getScreenSize() {
+        return screenSize;
+    }
+    
+    public double getWeight() {
+        return weight;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Screen size: " + screenSize + " inches, Weight: " + weight + " kg");
+    }
+}
+
+class Sounds extends Electronics {
+    private int wattage;
+    private boolean wireless;
+    
+    public Sounds(String brand, double price, int warrantyYears, int wattage, boolean wireless) {
+        super(brand, price, warrantyYears);
+        this.wattage = wattage;
+        this.wireless = wireless;
+    }
+    
+    public int getWattage() {
+        return wattage;
+    }
+    
+    public boolean isWireless() {
+        return wireless;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Wattage: " + wattage + "W, Wireless: " + wireless);
+    }
+}
+
+class Subwoofer extends Sounds {
+    private int bassLevel;
+    private String connectivity;
+    
+    public Subwoofer(String brand, double price, int warrantyYears, int wattage, boolean wireless, 
+                     int bassLevel, String connectivity) {
+        super(brand, price, warrantyYears, wattage, wireless);
+        this.bassLevel = bassLevel;
+        this.connectivity = connectivity;
+    }
+    
+    public int getBassLevel() {
+        return bassLevel;
+    }
+    
+    public String getConnectivity() {
+        return connectivity;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Bass level: " + bassLevel + ", Connectivity: " + connectivity);
+    }
+}
+
+class Loudspeaker extends Sounds {
+    private int speakerCount;
+    private boolean portable;
+    
+    public Loudspeaker(String brand, double price, int warrantyYears, int wattage, boolean wireless, 
+                      int speakerCount, boolean portable) {
+        super(brand, price, warrantyYears, wattage, wireless);
+        this.speakerCount = speakerCount;
+        this.portable = portable;
+    }
+    
+    public int getSpeakerCount() {
+        return speakerCount;
+    }
+    
+    public boolean isPortable() {
+        return portable;
+    }
+    
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Speaker count: " + speakerCount + ", Portable: " + portable);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== Doctor Hierarchy ===");
+        Doctor doctor = new Doctor("John Smith", 15);
+        doctor.displayInfo();
+        
+        System.out.println("\n--- Xirurg ---");
+        Xirurg xirurg = new Xirurg("Alice Johnson", 20, "Cardiac", 1500);
+        Xirurg.displayInfo();
+        
+        System.out.println("\n--- ENT Specialist ---");
+        Lor ent = new Lor("Robert Brown", 10, true, "City Medical Center");
+        ent.displayInfo();
+        
+        System.out.println("\n=== Electronics Hierarchy ===");
+        Electronics electronics = new Electronics("Generic", 99.99, 1);
+        electronics.displayInfo();
+        
+        System.out.println("\n--- Computer ---");
+        Computers computer = new Computers("Dell", 799.99, 3, "Intel i7", 16);
+        computer.displayInfo();
+        
+        System.out.println("\n--- PC ---");
+        PC pc = new PC("HP", 1299.99, 2, "AMD Ryzen 9", 32, true, "Full Tower");
+        pc.displayInfo();
+        
+        System.out.println("\n--- Laptop ---");
+        Laptop laptop = new Laptop("Lenovo", 999.99, 2, "Intel i5", 8, 15.6, 1.8);
+        laptop.displayInfo();
+        
+        System.out.println("\n--- Sounds ---");
+        Sounds sounds = new Sounds("Sony", 199.99, 2, 50, true);
+        sounds.displayInfo();
+        
+        System.out.println("\n--- Subwoofer ---");
+        Subwoofer subwoofer = new Subwoofer("Bose", 299.99, 3, 100, false, 10, "Bluetooth/AUX");
+        subwoofer.displayInfo();
+        
+        System.out.println("\n--- Loudspeaker ---");
+        Loudspeaker loudspeaker = new Loudspeaker("JBL", 159.99, 2, 80, true, 4, true);
+        loudspeaker.displayInfo();
+    }
+}
