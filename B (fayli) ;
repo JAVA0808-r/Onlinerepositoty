@@ -1,0 +1,70 @@
+// Animals.java fayli
+abstract class Animal {
+    private String name; // Encapsulation - private field
+    
+    public Animal(String name) {
+        this.name = name;
+    }
+    
+    // Encapsulation - getter method
+    public String getName() {
+        return name;
+    }
+    
+    // Abstract method to be overridden by subclasses
+    public abstract void sound();
+}
+
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+    
+    @Override
+    public void sound() {
+        System.out.println(getName() + " says: Woof woof!");
+    }
+}
+
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+    
+    @Override
+    public void sound() {
+        System.out.println(getName() + " says: Meow meow!");
+    }
+}
+
+class Bird extends Animal {
+    public Bird(String name) {
+        super(name);
+    }
+    
+    @Override
+    public void sound() {
+        System.out.println(getName() + " says: Tweet tweet!");
+    }
+}
+
+public class Animals {
+    public static void main(String[] args) {
+        // Create different animal objects
+        Animal dog = new Dog("Rex");
+        Animal cat = new Cat("Whiskers");
+        Animal bird = new Bird("Tweety");
+        
+        // Make animals sound
+        makeAnimalSound(dog);
+        makeAnimalSound(cat);
+        makeAnimalSound(bird);
+    }
+    
+    public static void makeAnimalSound(Animal animal) {
+        System.out.println("Animal: " + animal.getClass().getSimpleName());
+        System.out.println("Name: " + animal.getName());
+        animal.sound();
+        System.out.println("--------------------------");
+    }
+}
