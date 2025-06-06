@@ -1,0 +1,155 @@
+public class MathFunctions {
+    
+    // Addition methods (add)
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public double add(double a, double b) {
+        return a + b;
+    }
+    
+    public float add(float a, float b) {
+        return a + b;
+    }
+    
+    public long add(long a, long b) {
+        return a + b;
+    }
+    
+    // Subtraction methods (sub)
+    public int sub(int a, int b) {
+        return a - b;
+    }
+    
+    public double sub(double a, double b) {
+        return a - b;
+    }
+    
+    public float sub(float a, float b) {
+        return a - b;
+    }
+    
+    public long sub(long a, long b) {
+        return a - b;
+    }
+    
+    // Multiplication methods (multiply)
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+    
+    public float multiply(float a, float b) {
+        return a * b;
+    }
+    
+    public long multiply(long a, long b) {
+        return a * b;
+    }
+    
+    // Division methods (div)
+    public int div(int a, int b) {
+        if (b == 0) throw new ArithmeticException("Division by zero");
+        return a / b;
+    }
+    
+    public double div(double a, double b) {
+        if (b == 0) throw new ArithmeticException("Division by zero");
+        return a / b;
+    }
+    
+    public float div(float a, float b) {
+        if (b == 0) throw new ArithmeticException("Division by zero");
+        return a / b;
+    }
+    
+    public long div(long a, long b) {
+        if (b == 0) throw new ArithmeticException("Division by zero");
+        return a / b;
+    }
+    
+    // Absolute value methods (abs)
+    public int abs(int a) {
+        return Math.abs(a);
+    }
+    
+    public double abs(double a) {
+        return Math.abs(a);
+    }
+    
+    public float abs(float a) {
+        return Math.abs(a);
+    }
+    
+    public long abs(long a) {
+        return Math.abs(a);
+    }
+    
+    // Power methods (pow)
+    public int pow(int a) {
+        return a * a;
+    }
+    
+    public double pow(double a) {
+        return a * a;
+    }
+    
+    public float pow(float a) {
+        return a * a;
+    }
+    
+    public long pow(long a) {
+        return a * a;
+    }
+    
+    // Main method to test the class
+    public static void main(String[] args) {
+        MathFunctions math = new MathFunctions();
+        
+        // Testing add methods
+        System.out.println("Addition:");
+        System.out.println("int: " + math.add(5, 3));
+        System.out.println("double: " + math.add(5.5, 3.2));
+        System.out.println("float: " + math.add(4.5f, 2.3f));
+        System.out.println("long: " + math.add(100000L, 200000L));
+        
+        // Testing sub methods
+        System.out.println("\nSubtraction:");
+        System.out.println("int: " + math.sub(5, 3));
+        System.out.println("double: " + math.sub(5.5, 3.2));
+        System.out.println("float: " + math.sub(4.5f, 2.3f));
+        System.out.println("long: " + math.sub(100000L, 200000L));
+        
+        // Testing multiply methods
+        System.out.println("\nMultiplication:");
+        System.out.println("int: " + math.multiply(5, 3));
+        System.out.println("double: " + math.multiply(5.5, 3.2));
+        System.out.println("float: " + math.multiply(4.5f, 2.3f));
+        System.out.println("long: " + math.multiply(100000L, 200000L));
+        
+        // Testing div methods
+        System.out.println("\nDivision:");
+        System.out.println("int: " + math.div(5, 3));
+        System.out.println("double: " + math.div(5.5, 3.2));
+        System.out.println("float: " + math.div(4.5f, 2.3f));
+        System.out.println("long: " + math.div(100000L, 200000L));
+        
+        // Testing abs methods
+        System.out.println("\nAbsolute value:");
+        System.out.println("int: " + math.abs(-5));
+        System.out.println("double: " + math.abs(-5.5));
+        System.out.println("float: " + math.abs(-4.5f));
+        System.out.println("long: " + math.abs(-100000L));
+        
+        // Testing pow methods
+        System.out.println("\nPower (square):");
+        System.out.println("int: " + math.pow(5));
+        System.out.println("double: " + math.pow(5.5));
+        System.out.println("float: " + math.pow(4.5f));
+        System.out.println("long: " + math.pow(100000L));
+    }
+}
