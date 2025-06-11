@@ -1,0 +1,64 @@
+public class Main {
+    public static void main(String[] args) {
+        // Test constructors
+        MyTime time1 = new MyTime();
+        MyTime time2 = new MyTime(14, 1, 9);
+        MyTime time3 = new MyTime(23, 59, 59);
+        MyTime time4 = new MyTime(0, 0, 0);
+        
+        // Test invalid time
+        MyTime invalidTime = new MyTime(25, 70, 80);
+        
+        // Test toString
+        System.out.println("Time1: " + time1); // 00:00:00
+        System.out.println("Time2: " + time2); // 14:01:09
+        System.out.println("Time3: " + time3); // 23:59:59
+        System.out.println("Time4: " + time4); // 00:00:00
+        
+        // Test setters
+        time1.setHour(8);
+        time1.setMinute(30);
+        time1.setSecond(45);
+        System.out.println("Time1 after set: " + time1); // 08:30:45
+        
+        // Test invalid setters
+        time1.setHour(25);
+        time1.setMinute(70);
+        time1.setSecond(100);
+        
+        // Test nextSecond
+        System.out.println("Time3 before nextSecond: " + time3);
+        time3.nextSecond();
+        System.out.println("Time3 after nextSecond: " + time3); // 00:00:00
+        
+        // Test nextMinute
+        time2.setTime(14, 59, 30);
+        System.out.println("Time2 before nextMinute: " + time2);
+        time2.nextMinute();
+        System.out.println("Time2 after nextMinute: " + time2); // 15:00:30
+        
+        // Test nextHour
+        time2.setTime(23, 30, 30);
+        System.out.println("Time2 before nextHour: " + time2);
+        time2.nextHour();
+        System.out.println("Time2 after nextHour: " + time2); // 00:30:30
+        
+        // Test previousSecond
+        time4.setTime(0, 0, 0);
+        System.out.println("Time4 before previousSecond: " + time4);
+        time4.previousSecond();
+        System.out.println("Time4 after previousSecond: " + time4); // 23:59:59
+        
+        // Test previousMinute
+        time1.setTime(12, 0, 30);
+        System.out.println("Time1 before previousMinute: " + time1);
+        time1.previousMinute();
+        System.out.println("Time1 after previousMinute: " + time1); // 11:59:30
+        
+        // Test previousHour
+        time1.setTime(0, 30, 30);
+        System.out.println("Time1 before previousHour: " + time1);
+        time1.previousHour();
+        System.out.println("Time1 after previousHour: " + time1); // 23:30:30
+    }
+}
