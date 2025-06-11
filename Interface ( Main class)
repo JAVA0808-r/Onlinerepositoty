@@ -1,0 +1,41 @@
+public class Main {
+    public static void main(String[] args) {
+        // Sportchilar tizimini test qilish
+        System.out.println("=== Sports System ===");
+        
+        Football footballer = new Football("Lionel Messi", 10, "PSG", 2, 15, 750);
+        footballer.getInfo();
+        System.out.println("Team: " + footballer.getTeamName());
+        System.out.println();
+        
+        Volleyball volleyballer = new Volleyball("Wilfredo Leon", 9, "Zenit Kazan", 1250);
+        volleyballer.getInfo();
+        System.out.println();
+        
+        Basketball basketballer = new Basketball("LeBron James", 23, "Lakers", 36000);
+        basketballer.getInfo();
+        System.out.println();
+        
+        GoalKeeper keeper = new GoalKeeper("Manuel Neuer", 1, "Bayern Munich", 1, 10, 0, 450);
+        keeper.getInfo();
+        System.out.println();
+        
+        Setter setter = new Setter("Bruno Rezende", 1, "Brazil", 850, 1200);
+        setter.getInfo();
+        System.out.println();
+        
+        PointGuard pointGuard = new PointGuard("Stephen Curry", 30, "Warriors", 20000, 5000);
+        pointGuard.getInfo();
+        System.out.println();
+        
+        // Harorat konvertorini test qilish
+        System.out.println("=== Temperature Converter ===");
+        
+        double celsius = 25.0;
+        BaseConverter toKelvin = new CelsiusToKelvin(celsius);
+        BaseConverter toFahrenheit = new CelsiusToFahrenheit(celsius);
+        
+        System.out.println(celsius + "°C = " + toKelvin.convert() + "K");
+        System.out.println(celsius + "°C = " + toFahrenheit.convert() + "°F");
+    }
+}
