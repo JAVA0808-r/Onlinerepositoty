@@ -1,0 +1,34 @@
+// BaseConverter abstract class
+abstract class BaseConverter {
+    protected double celsius;
+
+    public BaseConverter(double celsius) {
+        this.celsius = celsius;
+    }
+
+    public abstract double convert();
+}
+
+// CelsiusToKelvin class
+class CelsiusToKelvin extends BaseConverter {
+    public CelsiusToKelvin(double celsius) {
+        super(celsius);
+    }
+
+    @Override
+    public double convert() {
+        return celsius + 273.15;
+    }
+}
+
+// CelsiusToFahrenheit class
+class CelsiusToFahrenheit extends BaseConverter {
+    public CelsiusToFahrenheit(double celsius) {
+        super(celsius);
+    }
+
+    @Override
+    public double convert() {
+        return (celsius * 9/5) + 32;
+    }
+}
