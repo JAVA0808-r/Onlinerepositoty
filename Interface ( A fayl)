@@ -1,0 +1,163 @@
+// Information interface
+interface Information {
+    void getInfo();
+    String getTeamName();
+}
+
+// Player abstract class
+abstract class Player implements Information {
+    private String nameOfPlayer;
+    private String sportType;
+    private int numberPosition;
+    private String teamName;
+
+    public Player(String name, String sport, int number, String team) {
+        this.nameOfPlayer = name;
+        this.sportType = sport;
+        this.numberPosition = number;
+        this.teamName = team;
+    }
+
+    // Encapsulation - getter va setter metodlar
+    public String getNameOfPlayer() {
+        return nameOfPlayer;
+    }
+
+    public void setNameOfPlayer(String nameOfPlayer) {
+        this.nameOfPlayer = nameOfPlayer;
+    }
+
+    public String getSportType() {
+        return sportType;
+    }
+
+    public void setSportType(String sportType) {
+        this.sportType = sportType;
+    }
+
+    public int getNumberPosition() {
+        return numberPosition;
+    }
+
+    public void setNumberPosition(int numberPosition) {
+        this.numberPosition = numberPosition;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    @Override
+    public void getInfo() {
+        System.out.println("Player: " + nameOfPlayer);
+        System.out.println("Sport: " + sportType);
+        System.out.println("Number: " + numberPosition);
+        System.out.println("Team: " + teamName);
+    }
+}
+
+// Football class
+class Football extends Player {
+    private int countOfRedCard;
+    private int countOfYellowCard;
+    private int countOfGoals;
+
+    public Football(String name, int number, String team, int redCards, int yellowCards, int goals) {
+        super(name, "Football", number, team);
+        this.countOfRedCard = redCards;
+        this.countOfYellowCard = yellowCards;
+        this.countOfGoals = goals;
+    }
+
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.println("Red Cards: " + countOfRedCard);
+        System.out.println("Yellow Cards: " + countOfYellowCard);
+        System.out.println("Goals: " + countOfGoals);
+    }
+}
+
+// Volleyball class
+class Volleyball extends Player {
+    private int numberOfPoints;
+
+    public Volleyball(String name, int number, String team, int points) {
+        super(name, "Volleyball", number, team);
+        this.numberOfPoints = points;
+    }
+
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.println("Points: " + numberOfPoints);
+    }
+}
+
+// Basketball class
+class Basketball extends Player {
+    private int numberOfGoals;
+
+    public Basketball(String name, int number, String team, int goals) {
+        super(name, "Basketball", number, team);
+        this.numberOfGoals = goals;
+    }
+
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.println("Goals: " + numberOfGoals);
+    }
+}
+
+// GoalKeeper class (Footballning subclassi)
+class GoalKeeper extends Football {
+    private int countOfSaves;
+
+    public GoalKeeper(String name, int number, String team, int redCards, int yellowCards, int goals, int saves) {
+        super(name, number, team, redCards, yellowCards, goals);
+        this.countOfSaves = saves;
+    }
+
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.println("Saves: " + countOfSaves);
+    }
+}
+
+// Setter class (Volleyballning subclassi)
+class Setter extends Volleyball {
+    private int countOfSets;
+
+    public Setter(String name, int number, String team, int points, int sets) {
+        super(name, number, team, points);
+        this.countOfSets = sets;
+    }
+
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.println("Sets: " + countOfSets);
+    }
+}
+
+// PointGuard class (Basketballning subclassi)
+class PointGuard extends Basketball {
+    private int countOfGuard;
+
+    public PointGuard(String name, int number, String team, int goals, int guards) {
+        super(name, number, team, goals);
+        this.countOfGuard = guards;
+    }
+
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.println("Guards: " + countOfGuard);
+    }
+}
